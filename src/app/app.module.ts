@@ -6,17 +6,27 @@ import { AppComponent } from './app.component';
 import { GraphQLModule } from './graphql.module';
 import { HttpClientModule } from '@angular/common/http';
 import { CustomersListComponent } from './customers-list/customers-list.component';
+import { MoviesListComponent } from './movies-list/movies-list.component';
+import { MovieDetailsComponent } from './movie-details/movie-details.component';
+import { CommonModule } from '@angular/common';
+import { ReactiveFormsModule } from '@angular/forms';
+import { CommentFormComponent } from './comment-form/comment-form.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    CustomersListComponent
+    CustomersListComponent,
+    MoviesListComponent,
+    MovieDetailsComponent,
+    CommentFormComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     GraphQLModule,
-    HttpClientModule
+    HttpClientModule,
+    CommonModule,
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

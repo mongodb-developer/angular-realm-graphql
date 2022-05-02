@@ -1,0 +1,26 @@
+<div *ngIf="movieLoading; else movieBlock">
+    Loading your movie...
+</div>
+
+<ng-template #movieBlock>
+    <h2>{{movie.title}}</h2>
+    <p>Year: {{movie.year}}</p>
+
+    <app-comment-form (formSubmitted)="addComment($event)"></app-comment-form>
+
+    <h3>Comments</h3>
+    <ul>
+        <li *ngFor="let comment of comments">
+            <p>Author: {{ comment.name }}</p>
+            <p>Date: {{ comment.date | date }}</p>
+            <p>{{ comment.text }}</p>
+        </li>
+    </ul>
+
+    <ng-template #loadComments>
+        <button (click)="loadMoreComments()">Load more</button>
+    </ng-template>
+
+    <div *ngIf="commentsLoading; else loadComments">Loading comments...</div>
+
+</ng-template>
