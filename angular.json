@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "angular-analytics-graphql": {
+    "angular-realm-graphql": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -20,7 +20,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/angular-analytics-graphql",
+            "outputPath": "dist/angular-realm-graphql",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -72,10 +72,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "angular-analytics-graphql:build:production"
+              "browserTarget": "angular-realm-graphql:build:production"
             },
             "development": {
-              "browserTarget": "angular-analytics-graphql:build:development"
+              "browserTarget": "angular-realm-graphql:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -83,7 +83,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "angular-analytics-graphql:build"
+            "browserTarget": "angular-realm-graphql:build"
           }
         },
         "test": {
@@ -107,5 +107,5 @@
       }
     }
   },
-  "defaultProject": "angular-analytics-graphql"
+  "defaultProject": "angular-realm-graphql"
 }

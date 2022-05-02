@@ -25,7 +25,7 @@ module.exports = function (config) {
       suppressAll: true // removes the duplicated traces
     },
     coverageReporter: {
-      dir: require('path').join(__dirname, './coverage/angular-analytics-graphql'),
+      dir: require('path').join(__dirname, './coverage/angular-realm-graphql'),
       subdir: '.',
       reporters: [
         { type: 'html' },
