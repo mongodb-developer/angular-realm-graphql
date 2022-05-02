@@ -9,13 +9,22 @@ const GET_MOVIE_WITH_COMMENTS = gql`
   query GetMovieWithComments($movie_id: ObjectId) {
     movie(query:{ _id: $movie_id }) {
       poster
-      released
       title
-      plot
       fullplot
       year
       type
       rated
+      imdb {
+        rating
+      }
+      tomatoes {
+        viewer {
+          meter
+        }
+        critic {
+          meter
+        }
+      }
     }
     
     comments(query: { movie_id: { _id: $movie_id } }, limit: 5, sortBy: DATE_DESC) {
@@ -56,8 +65,8 @@ export class MovieDetailsComponent implements OnInit {
   movieAndComments$: Observable<{ movie: Movie, comments: Comment[] }>;
   movie: Movie;
   comments: Comment[];
-  movieLoading: boolean = true;
-  commentsLoading: boolean = false;
+  movieLoading = true;
+  commentsLoading = false;
 
   constructor(
     private route: ActivatedRoute,

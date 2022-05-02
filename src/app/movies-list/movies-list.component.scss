@@ -1,0 +1,24 @@
+.movie-card {
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+    margin-bottom: 10px;
+    background-color: #f6f6f5;
+
+    .movie-poster {
+        width: 150px;
+        max-height: 300px;
+    }
+
+    .movie-details {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        gap: 10px;
+    }
+
+    .movie-title a {
+        color: royalblue;
+        text-decoration: none;
+    }
+}

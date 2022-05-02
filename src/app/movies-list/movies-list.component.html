@@ -1,5 +1,22 @@
-<ul>
-    <li *ngFor="let movie of movies$ | async">
-        <a [routerLink]="[movie._id]">{{ movie.title }}</a>
-    </li>
-</ul>
+<h2 class="text-center m-5">Movie Catalog</h2>
+
+<div class="text-center" *ngIf="moviesLoading">
+    Loading the movies...
+</div>
+
+<div *ngFor="let movie of movies$ | async" class="movie-card container-sm">
+    <a [routerLink]="[movie._id]">
+        <img [src]="movie.poster" onerror="this.src='/assets/no-poster.jpeg'" alt="{{ movie.title }}"
+            class="movie-poster" />
+    </a>
+    <div class="movie-details">
+        <h3 class="movie-title">
+            <a [routerLink]="[movie._id]">{{ movie.title }}</a>
+        </h3>
+
+        <span>{{ movie.rated || 'UNRATED' }} | {{ movie.runtime }} min | {{ movie.year }} </span>
+        <span>⭐️ &nbsp;{{ movie.imdb?.rating }} </span>
+
+        <p>{{ movie.plot }}</p>
+    </div>
+</div>

@@ -1,0 +1,60 @@
+.movie {
+    margin: 20px 0;
+
+    .movie-title {
+        margin-bottom: 30px;
+    }
+
+    .movie-details {
+        display: flex;
+        flex-direction: row;
+        gap: 30px;
+    }
+
+    .ratings {
+        display: flex;
+        gap: 20px;
+    }
+
+    .rating-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 5px;
+        width: 120px;
+
+        .rating-provider {
+            font-size: 15px;
+        }
+
+        .rating {
+            font-size: 20px;
+        }
+    }
+
+    .plot {
+        margin-top: 20px;
+    }
+
+    .movie-poster {
+        width: 350px;
+        max-height: 500px;
+    }
+}
+
+.add-comment {
+    margin: 50px 0;
+}
+
+.movie, .comments, .add-comment {
+    // background-color: #f6f6f5;
+    padding: 30px 50px;
+    border: 1px solid rgba(0,0,0,.2);
+    border-radius: 0.25rem;
+}
+
+.comment {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}

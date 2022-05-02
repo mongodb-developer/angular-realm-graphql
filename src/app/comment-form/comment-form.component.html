@@ -1,7 +1,7 @@
 <form class="comment-form" autocomplete="off" [formGroup]="commentForm" (ngSubmit)="submitForm()">
     <div class="form-floating mb-3">
-        <input class="form-control" type="text" id="name" formControlName="name" placeholder="Name" required>
-        <label for="name">Name</label>
+        <input class="form-control" type="text" id="name" formControlName="name" placeholder="Your Name" required>
+        <label for="name">Your Name</label>
     </div>
 
     <div *ngIf="name.invalid && (name.dirty || name.touched)" class="alert alert-danger">
@@ -12,7 +12,7 @@
 
     <div class="form-floating mb-3">
         <textarea class="form-control" type="text" formControlName="text" placeholder="Add your comment here." required></textarea>
-        <label for="text">Comment</label>
+        <label for="text">Your Comment</label>
     </div>
 
     <div *ngIf="text.invalid && (text.dirty || text.touched)" class="alert alert-danger">
@@ -25,5 +25,5 @@
         </div>
     </div>
 
-    <button class="btn btn-primary" type="submit" [disabled]="commentForm.invalid">Add</button>
+    <button class="btn btn-success" type="submit" [disabled]="commentForm.invalid">Add</button>
 </form>

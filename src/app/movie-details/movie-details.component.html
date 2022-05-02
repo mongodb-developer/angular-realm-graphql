@@ -1,26 +1,63 @@
 <div *ngIf="movieLoading; else movieBlock">
-    Loading your movie...
+    Loading the movie...
 </div>
 
 <ng-template #movieBlock>
-    <h2>{{movie.title}}</h2>
-    <p>Year: {{movie.year}}</p>
+    <div class="movie container-sm">
 
-    <app-comment-form (formSubmitted)="addComment($event)"></app-comment-form>
+        <div class="movie-details">
+            <img class="movie-poster" [src]="movie.poster" onerror="this.src='/assets/no-poster.jpeg'" />
+            <div>
+                <h2 class="movie-title">{{ movie.title }}</h2>
+                <div class="ratings">
+                    <div *ngIf="movie.imdb?.rating" class="rating-container">
+                        <span class="rating-provider">IMDb Rating</span>
+                        <span class="rating">⭐️ &nbsp; {{ movie.imdb?.rating }}/10</span>
+                    </div>
+    
+                    <div *ngIf="movie.tomatoes?.viewer?.meter" class="rating-container">
+                        <span class="rating-provider">Audience Score</span>
+                        <span class="rating">⭐️ &nbsp; {{ movie.tomatoes?.viewer?.meter }}%</span>
+                    </div>
+    
+                    <div *ngIf="movie.tomatoes?.critic?.meter" class="rating-container">
+                        <span class="rating-provider">Tomatometer</span>
+                        <span class="rating">⭐️ &nbsp; {{ movie.tomatoes?.critic?.meter }}%</span>
+                    </div>
+                </div>
 
-    <h3>Comments</h3>
-    <ul>
-        <li *ngFor="let comment of comments">
-            <p>Author: {{ comment.name }}</p>
-            <p>Date: {{ comment.date | date }}</p>
+                <p class="plot">{{ movie.fullplot }}</p>
+                <span>{{movie.year}} | {{ movie.rated || 'UNRATED' }} | {{ movie.runtime }} min</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="comments">
+        <h4>Comments</h4>
+        <hr>
+
+        <div *ngFor="let comment of comments" class="comment">
+            <span>Author: {{ comment.name }}</span>
+            <span>Date: {{ comment.date | date }}</span>
             <p>{{ comment.text }}</p>
-        </li>
-    </ul>
+            <hr>
+        </div>
 
-    <ng-template #loadComments>
-        <button (click)="loadMoreComments()">Load more</button>
-    </ng-template>
+        <ng-template #loadComments>
+            <button *ngIf="comments.length" class="btn btn-primary" (click)="loadMoreComments()">Load more comments</button>
+        </ng-template>
 
-    <div *ngIf="commentsLoading; else loadComments">Loading comments...</div>
+        <div *ngIf="commentsLoading; else loadComments">Loading comments...</div>
+
+        <span *ngIf="!comments.length && !commentsLoading">
+            No comments yet.
+        </span>
+    </div>
+
+    <div class="add-comment">
+        <h4>Add a comment</h4>
+        <app-comment-form (formSubmitted)="addComment($event)"></app-comment-form>
+    </div>
+
 
 </ng-template>

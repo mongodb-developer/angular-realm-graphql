@@ -1,16 +1,19 @@
 import { Component, OnInit } from '@angular/core';
 import { Apollo, gql } from 'apollo-angular';
 import { Observable } from 'rxjs';
-import { map } from 'rxjs/operators';
+import { map, tap } from 'rxjs/operators';
 import { Movie } from '../movie';
 
 const GET_ALL_MOVIES = gql`
   query GetAllMovies {
-    movies(limit: 50) {
+    movies(limit: 20, query: { num_mflix_comments_gt: 10 }) {
       _id
       title
       poster
       year
+      runtime
+      rated
+      plot
       imdb {
         rating
       }
@@ -25,12 +28,16 @@ const GET_ALL_MOVIES = gql`
 })
 export class MoviesListComponent implements OnInit {
   movies$: Observable<Movie[]>;
+  moviesLoading = true;
 
   constructor(private apollo: Apollo) {}
 
   ngOnInit() {
     this.movies$ = this.apollo
       .watchQuery({query: GET_ALL_MOVIES})
-      .valueChanges.pipe(map((result: any) => result?.data?.movies));
+      .valueChanges.pipe(
+        tap((result: any) => { this.moviesLoading = result?.loading }),
+        map((result: any) => result?.data?.movies)
+      );
   }
 }
