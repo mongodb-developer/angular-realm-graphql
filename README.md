@@ -1,4 +1,4 @@
-# Angular and The Realm GraphQL API Demo — Movie Catalog
+# Angular and GraphQL API Demo — Movie Catalog
 
 This is an app that demonstrates how to use Angular and the [Realm GraphQL API](https://www.mongodb.com/docs/realm/graphql/).
 
