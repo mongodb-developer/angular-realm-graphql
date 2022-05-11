@@ -4,7 +4,7 @@ This is an app that demonstrates how to use Angular and the [Realm GraphQL API](
 
 ## Usage
 
-Update the `src/app/environment.ts` file with your own keys:
+Update the `src/environments/environment.ts` file with your own keys:
 
 ```ts
 export const environment = {
