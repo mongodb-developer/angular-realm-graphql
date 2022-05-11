@@ -1,0 +1,29 @@
+{
+    "field_name": "CommentsOffset",
+    "function_name": "loadCommentsOffset",
+    "input_type": {
+        "properties": {
+            "limit": {
+                "bsonType": "int"
+            },
+            "movie_id": {
+                "bsonType": "objectId"
+            },
+            "offset": {
+                "bsonType": "int"
+            },
+            "sortBy": {
+                "bsonType": "string"
+            },
+            "sortOrder": {
+                "bsonType": "string"
+            }
+        },
+        "title": "CommentsOffsetInput",
+        "type": "object"
+    },
+    "input_type_format": "custom",
+    "on_type": "Query",
+    "payload_type": "Comment",
+    "payload_type_format": "generated-list"
+}

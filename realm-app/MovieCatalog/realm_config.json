@@ -1,0 +1,7 @@
+{
+    "app_id": "moviecatalog-jglch",
+    "config_version": 20210101,
+    "name": "MovieCatalog",
+    "location": "US-VA",
+    "deployment_model": "GLOBAL"
+}
