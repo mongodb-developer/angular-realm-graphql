@@ -4,6 +4,8 @@ This is an app that demonstrates how to use Angular and the [Realm GraphQL API](
 
 You can also take a look at the supporting Google Slides presentation: [Practical Introduction to GraphQL](https://bit.ly/mdb-graphql).
 
+Register for [MongoDB Atlas](https://www.mongodb.com/cloud/atlas/register?utm_campaign=stanimira_vlaeva&utm_source=github&utm_medium=referral) and create a forever-free cluster!
+
 ## Usage
 
 Update the `src/environments/environment.ts` file with your own keys:
