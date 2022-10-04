@@ -1,6 +1,6 @@
 # Angular and GraphQL API Demo — Movie Catalog
 
-This is an app that demonstrates how to use Angular and the [Realm GraphQL API](https://www.mongodb.com/docs/realm/graphql/?utm_campaign=stanimira_vlaeva&utm_source=github&utm_medium=github).
+This is an app that demonstrates how to use Angular and the [Atlas GraphQL API](https://www.mongodb.com/docs/realm/graphql/?utm_campaign=stanimira_vlaeva&utm_source=github&utm_medium=github).
 
 You can also take a look at the supporting Google Slides presentation: [Practical Introduction to GraphQL](https://bit.ly/mdb-graphql).
 
