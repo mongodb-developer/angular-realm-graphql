@@ -19,7 +19,7 @@ export class CommentFormComponent implements OnInit {
   @Output()
   formSubmitted = new EventEmitter<Comment>();
 
-  commentForm = new FormGroup({});
+  commentForm: FormGroup;
 
   get name() { return this.commentForm.get('name')!; }
   get text() { return this.commentForm.get('text')!; }
